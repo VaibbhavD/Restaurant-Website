@@ -1,40 +1,52 @@
 import Card from '../UI/Card'
 import classes from './Available.module.css'
+import Mealitems from './Mealitems/Mealitems'
 
 const Dummy_meals=[
     {
         id: 'm1',
-        name: 'Sushi',
-        description: 'Finest fish and veggies',
-        price: 22.99,
+        name: 'Cheeze Burger',
+        description: 'Fresh Burger with full loaded Cheeze',
+        price:150,
       },
       {
         id: 'm2',
-        name: 'Schnitzel',
-        description: 'A german specialty!',
-        price: 16.5,
+        name: 'Rolls',
+        description: 'Chicken Roll',
+        price: 99,
       },
       {
         id: 'm3',
-        name: 'Barbecue Burger',
-        description: 'American, raw, meaty',
-        price: 12.99,
+        name: 'Panner cheeze Pizza',
+        description: 'Full loaded Panner and Cheeze PiZZa',
+        price:300,
+      },
+      {
+        id: 'm5',
+        name: 'Chiken Bucket',
+        description: '6 Pic Leg-Piece',
+        price:499,
       },
       {
         id: 'm4',
-        name: 'Green Bowl',
-        description: 'Healthy...and green...',
-        price: 18.99,
+        name: 'Coke',
+        description: '200ML Pepsi Coke',
+        price:25,
       },
 ]
 
 const AvailableMeals=()=>{
-    const MealList=Dummy_meals.map((meal)=><li>{meal.name}</li>)
+    // const MealList=Dummy_meals.map((meal)=><Mealitems key={meal.id} name={meal.name} description={meal.description} price={meal.price} />)
 
     return(
         <section className={classes.meals}>
           <Card>
-            <ul>{MealList}</ul>
+            <ul>{Dummy_meals.map((meal=>(
+              <Mealitems key={meal.id} 
+              name={meal.name}
+              description={meal.description}
+              price={meal.price} />
+            )))}</ul>
           </Card>
         </section>
     )

@@ -9,7 +9,7 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <main>
+      <main className='main'>
         <MealsMenu/>
       </main>
     </Fragment>
