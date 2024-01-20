@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CartIcon from '../Cart/CartIcon'
 import classes from './CartButton.module.css'
+import MealCart from '../Cart/MealCart'
+
 
 const CartButton=props=>{
+    const[show,setshow]=useState(false)
+
+    const ShowCart=()=>{
+        setshow(true)
+    }
+    if(show)
+    {
+        <MealCart />
+    }
 
     return(
-        <button className={classes.button}>
+        <button onClick={ShowCart} className={classes.button}>
             <span className={classes.icon}>
             <CartIcon/>
             </span>
