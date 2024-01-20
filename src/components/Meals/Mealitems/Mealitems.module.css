@@ -21,3 +21,28 @@
     color: #55c639;
     font-size: 1.1rem;
   }
+  .form{
+    text-align: center;
+    /* margin-bottom: 0.3rem; */
+  }
+  .form label{
+    font-weight: bold;
+  }
+
+  .form input{
+    width:1.7rem;
+    margin-left: 0.5rem;
+    height: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  .form button{
+    padding: 0.6rem;
+    border-radius: 1rem ;
+    border-color: transparent;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: #da5d1f;
+    color: aliceblue;
+    font-weight: bold;
+  }

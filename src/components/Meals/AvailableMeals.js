@@ -18,7 +18,7 @@ const Dummy_meals=[
       {
         id: 'm3',
         name: 'Panner cheeze Pizza',
-        description: 'Full loaded Panner and Cheeze PiZZa',
+        description: 'Full loaded Panner and Cheeze Pizza',
         price:300,
       },
       {
