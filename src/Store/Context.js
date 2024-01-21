@@ -2,7 +2,7 @@ import React from "react";
 
 const ContextStore=React.createContext({
     items:[],
-    Quantity,
+    Quantity:0,
     AddItem:()=>{},
     RemoveItem:(id)=>{}
 })

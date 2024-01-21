@@ -1,10 +1,13 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import mealsImage from '../../assts/meals.jpg'
 import classes from './Header.module.css'
 import CartButton from './CartButton'
+import ContextStore from '../../Store/Context'
 
 
 const Header=(props)=>{
+    const context=useContext(ContextStore)
+    
     return(
         <Fragment>
             <header  className={classes.header}>

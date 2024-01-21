@@ -1,9 +1,9 @@
 import './App.css';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import Header from './components/Layout/Header'
 import MealsMenu from './components/Meals/MealsMenu';
 import MealCart from './components/Cart/MealCart';
-import ContxtProvider from './Store/ContextProvider';
+import ContextProvider from './Store/ContextProvider';
 
 
 function App() {
@@ -17,13 +17,13 @@ function App() {
   }
 
   return (
-    <ContxtProvider>
+    <ContextProvider>
       {show && <MealCart DisebleCart={DisebleCart}/>}
       <Header enableCart={enableCart}/>
       <main className='main'>
         <MealsMenu />
       </main>
-    </ContxtProvider>
+    </ContextProvider>
   );
 }
 

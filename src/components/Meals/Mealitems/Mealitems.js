@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import classes from './Mealitems.module.css'
 import MealitemForm from './MealitemForm'
+// import ContextStore from '../../../Store/Context'
 
 const Mealitems=(props)=>{
     const price=`RS.${props.price}`
+    
+    
 
     return(
         <li className={classes.meal}>
@@ -13,7 +16,7 @@ const Mealitems=(props)=>{
             <div className={classes.price}>{price}</div>
         </div>
         <div>
-            <MealitemForm/>
+            <MealitemForm />
         </div>
         </li>
     )

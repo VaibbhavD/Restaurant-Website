@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import CartIcon from '../Cart/CartIcon'
 import classes from './CartButton.module.css'
+import ContextStore from '../../Store/Context'
 
 
 const CartButton=(props)=>{
+    const context=useContext(ContextStore)
+
+    const NoOfItems=context.items.reduce((currNumber,item)=>{
+        return currNumber+item.Quantity;
+    },0)
 
     return(
         <button onClick={()=>props.enableCart()} className={classes.button}>
@@ -11,7 +17,7 @@ const CartButton=(props)=>{
             <CartIcon/>
             </span>
             <span>Your Cart</span>
-            <span className={classes.badge}>0</span>
+            <span className={classes.badge}>{NoOfItems}</span>
         </button>
     )
 }

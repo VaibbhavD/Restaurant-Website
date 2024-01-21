@@ -2,18 +2,19 @@ import React from "react";
 import ContextStore from "./Context";
 
 
-const ContxtProvider=(props)=>{
+const ContextProvider=(props)=>{
 
-    const AddItem=()=>{}
+    const AddItem=({item})=>{
+        props.items.add(item)
+    }
 
     const RemoveItem=(id)=>{}
 
     const Context={
         items:[],
-        Quantity,
+        Quantity:0,
         AddItem:AddItem,
         RemoveItem:RemoveItem
-
     }
 
     return (
@@ -22,4 +23,4 @@ const ContxtProvider=(props)=>{
         </ContextStore.Provider>
     )
 }
-export default ContxtProvider
+export default ContextProvider
