@@ -3,12 +3,13 @@ import mealsImage from '../../assts/meals.jpg'
 import classes from './Header.module.css'
 import CartButton from './CartButton'
 
-const Header=porps=>{
+
+const Header=(props)=>{
     return(
         <Fragment>
             <header  className={classes.header}>
             <h1>Burger King</h1>
-            <CartButton/>
+            <CartButton enableCart={props.enableCart}/>
             </header>
 
             <div className={classes['main-image']}>

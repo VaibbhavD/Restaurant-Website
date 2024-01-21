@@ -1,18 +1,26 @@
 import './App.css';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import Header from './components/Layout/Header'
 import MealsMenu from './components/Meals/MealsMenu';
 import MealCart from './components/Cart/MealCart';
 
 
 function App() {
-  
+  const [show,setshow]=useState(false)
+
+  const enableCart=()=>{
+    setshow(true)
+  }
+  const DisebleCart=()=>{
+    setshow(false)
+  }
+
   return (
     <Fragment>
-      <MealCart/>
-      <Header />
+      {show && <MealCart DisebleCart={DisebleCart}/>}
+      <Header enableCart={enableCart}/>
       <main className='main'>
-        <MealsMenu/>
+        <MealsMenu />
       </main>
     </Fragment>
   );
