@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react';
 import Header from './components/Layout/Header'
 import MealsMenu from './components/Meals/MealsMenu';
 import MealCart from './components/Cart/MealCart';
+import ContxtProvider from './Store/ContextProvider';
 
 
 function App() {
@@ -16,13 +17,13 @@ function App() {
   }
 
   return (
-    <Fragment>
+    <ContxtProvider>
       {show && <MealCart DisebleCart={DisebleCart}/>}
       <Header enableCart={enableCart}/>
       <main className='main'>
         <MealsMenu />
       </main>
-    </Fragment>
+    </ContxtProvider>
   );
 }
 
