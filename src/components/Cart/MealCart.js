@@ -5,7 +5,8 @@ import { useContext, useEffect, useState } from 'react';
 
 const MealCart = (props) => {
   const context=useContext(ContextStore)
-  const[total,settotal]=useState(0)
+  const[order,setorder]=useState(false)
+  // const[total,settotal]=useState(0)
   // const cartItems = (
   //   <ul className={classes['cart-items']}>
   //     {[{ id: 'c1', name: 'Sushi', amount: 2, price: 12.99 }].map((item) => (
@@ -13,6 +14,23 @@ const MealCart = (props) => {
   //     ))}
   //   </ul>
   // );
+
+  let total=0;
+  context.items.forEach(item => {
+    total=total+(item.price*item.Qty)
+  });
+
+  const enableorder=()=>{
+    setorder(true)
+  }
+
+  if (order ===true) 
+  {return <Modal DisebleCart={props.DisebleCart}>
+    <div className={classes.total}>Order Succesfully</div>
+    <div className={classes.actions}>
+      <button className={classes['button--alt']} onClick={()=>props.DisebleCart()}>Close</button>
+    </div>
+  </Modal> }
   
   if(context.items.length=== 0)
   {
@@ -31,21 +49,24 @@ const MealCart = (props) => {
       {context.items.map((item)=>
       <div className={classes.total}>
       <span>
-        <h5>
+        <h7>
         {item.name}<br></br>
-          {item.Qty}
-        </h5>
+          Qty-{item.Qty}x<br/>
+          Rs.{item.price}
+        </h7>
       </span>
-      <h4>{item.price}</h4>
+      <h4>Rs.{item.price*item.Qty}</h4>
       </div>
       )}
+       <hr/>
       <div className={classes.total}>
+       
         <span>Total Amount</span>
-      <span>{total}</span>
+      <span>Rs.{total}</span>
       </div>
       <div className={classes.actions}>
         <button className={classes['button--alt']} onClick={()=>props.DisebleCart()}>Close</button>
-        <button className={classes.button}>Order</button>
+        <button className={classes.button} onClick={enableorder} >Order</button>
       </div>
     </Modal>
   );
