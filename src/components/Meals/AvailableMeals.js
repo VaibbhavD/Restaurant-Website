@@ -41,8 +41,10 @@ const AvailableMeals=()=>{
     return(
         <section className={classes.meals}>
           <Card>
-            <ul>{Dummy_meals.map((meal=>(
-              <Mealitems key={meal.id} 
+            <ul >{Dummy_meals.map((meal=>(
+              <Mealitems 
+              key={meal.id} 
+              id={meal.id} 
               name={meal.name}
               description={meal.description}
               price={meal.price} />

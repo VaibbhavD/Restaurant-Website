@@ -7,9 +7,11 @@ import ContextStore from '../../Store/Context'
 const CartButton=(props)=>{
     const context=useContext(ContextStore)
 
-    const NoOfItems=context.items.reduce((currNumber,item)=>{
-        return currNumber+item.Quantity;
-    },0)
+    // const NoOfItems=context.items.reduce((currNumber,item)=>{
+    //     return currNumber+item.Quantity;
+    // },0)
+
+    const NoOfItems=context.items.length;
 
     return(
         <button onClick={()=>props.enableCart()} className={classes.button}>

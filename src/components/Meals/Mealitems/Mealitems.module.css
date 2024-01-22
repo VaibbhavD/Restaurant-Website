@@ -42,7 +42,15 @@
     border-color: transparent;
     width: 100%;
     margin-top: 0.5rem;
-    background-color: #d2442b;
+    background-color: #f24421;
     color: aliceblue;
     font-weight: bold;
+  }
+  .form button:hover{
+    border-color: white;
+  }
+  .form button:active{
+    background-color: white;
+    color: red;
+    border-color: black;
   }

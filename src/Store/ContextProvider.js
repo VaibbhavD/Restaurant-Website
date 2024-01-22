@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ContextStore from "./Context";
 
 
 const ContextProvider=(props)=>{
+    const[items,setitems]=useState([])
 
-    const AddItem=({item})=>{
-        props.items.add(item)
+    const AddItem=(item)=>{
+        // items.push(item)
+        setitems((prev)=>{
+            return [...prev,item]
+        })
     }
 
     const RemoveItem=(id)=>{}
 
     const Context={
-        items:[],
+        items:items,
         Quantity:0,
         AddItem:AddItem,
         RemoveItem:RemoveItem
