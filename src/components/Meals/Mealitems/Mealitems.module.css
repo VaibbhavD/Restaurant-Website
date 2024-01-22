@@ -1,56 +1,56 @@
 .meal {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .meal h3 {
-    margin: 0 0 0.25rem 0;
-  }
-  
-  .description {
-    font-style: italic;
-    font-size: medium;
-  }
-  
-  .price {
-    margin-top: 0.25rem;
-    font-weight: bold;
-    color: #55c639;
-    font-size: 1.1rem;
-  }
-  .form{
-    text-align: center;
-    /* margin-bottom: 0.3rem; */
-  }
-  .form label{
-    font-weight: bold;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
 
-  .form input{
-    width:1.7rem;
-    margin-left: 0.5rem;
-    height: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-  }
-  .form button{
-    padding: 0.6rem;
-    border-radius: 1rem ;
-    border-color: transparent;
-    width: 100%;
-    margin-top: 0.5rem;
-    background-color: #f24421;
-    color: aliceblue;
-    font-weight: bold;
-  }
-  .form button:hover{
-    border-color: white;
-  }
-  .form button:active{
-    background-color: white;
-    color: red;
-    border-color: black;
-  }
+.meal h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.description {
+  font-style: italic;
+  font-size: medium;
+}
+
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #55c639;
+  font-size: 1.1rem;
+}
+.form {
+  text-align: center;
+  /* margin-bottom: 0.3rem; */
+}
+.form label {
+  font-weight: bold;
+}
+
+.form input {
+  width: 1.7rem;
+  margin-left: 0.5rem;
+  height: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+.form button {
+  padding: 0.6rem;
+  border-radius: 1rem;
+  border-color: transparent;
+  width: 100%;
+  margin-top: 0.5rem;
+  background-color: #cb513e;
+  color: aliceblue;
+  font-weight: bold;
+}
+.form button:hover {
+  border-color: white;
+}
+.form button:active {
+  background-color: white;
+  color: red;
+  border-color: black;
+}
