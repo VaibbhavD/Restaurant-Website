@@ -12,8 +12,17 @@ const MealitemForm = (props) => {
     if (Qty === 0) {
       return alert("Please Add Quatity");
     }
+    let add = false;
 
-    context.AddItem({ ...props.item, Qty: Qty, id: Math.random() });
+    for (let i = 0; i < context.items.length; i++) {
+      if (context.items[i].id === props.item.id) {
+        context.items[i].Qty = context.items[i].Qty + Number(Qty);
+        add = true;
+      }
+    }
+    if (add === false) {
+      context.AddItem({ ...props.item, Qty: Number(Qty) });
+    }
   };
 
   return (
@@ -26,7 +35,7 @@ const MealitemForm = (props) => {
           min={0}
           max={5}
           step={1}
-          onChange={(e) => setQty(e.target.value)}
+          onChange={(e) => setQty(Number(e.target.value))}
         />
       </div>
       <div>
