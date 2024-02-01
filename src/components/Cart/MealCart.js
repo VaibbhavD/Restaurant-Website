@@ -20,17 +20,14 @@ const MealCart = (props) => {
   // );
 
   useEffect(() => {
-    context.items.forEach((item) => {
-      settotal((prev) => prev + item.price * item.Qty);
-    });
+    const total = context.items.reduce(function (sum, item) {
+      return (sum += item.price * item.Qty);
+    }, 0);
+    settotal(total);
   }, []);
 
   const AddTotal = (worth) => {
     settotal((prev) => prev + worth);
-  };
-
-  const RemoveTotal = (worth) => {
-    settotal((prev) => prev - worth);
   };
 
   const enableorder = () => {
